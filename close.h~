@@ -1,0 +1,31 @@
+/*
+ *@function obtenir permet d'obtenir le choix de l'usager pour une option du menu 
+ *@param char*
+ *@return void
+ */
+void obteni(char *pt){
+	char c;
+	printf("Desirez vous vraiment quitter l'application (O/N)?: \n");
+     	printf("        - O pour Quitter \n");
+     	printf("        - N pour retourner à l'application \n");
+	do{
+		printf("\n\n");
+		printf("Entrez votre choix >>");
+		fflush(stdin);
+		c = toupper(getchar());
+	}while(strchr("ON", c) == NULL);
+	*pt = c;
+}
+
+
+void traite ( char choix){
+	switch(choix){
+ 		case 'O' : 
+                 	   break;break;break;
+		case 'N' : menu();
+			   break;
+		default:
+			printf("ceci n'apparait pas dans la liste de choix...");
+	}
+}
+
